@@ -7,17 +7,15 @@ import {
     Headers
 } from '@angular/http';
 import {
-    EmployeeService
-} from '../../services/empservice.service'
-import {
     Router,
     ActivatedRoute
 } from '@angular/router';
+import { EmployeeService } from './employee.service';
 @Component({
-    selector: 'getemployee',
-    templateUrl: './getemployee.component.html'
+    selector: 'get-employee',
+    templateUrl: './get-employee.component.html'
 })
-export class EmployeeDataComponent {
+export class GetEmployeeComponent {
     public employeelist: EmployeeList[];
     constructor(public http: Http, private _router: Router, private _employeeService: EmployeeService) {
         this.getEmployees();

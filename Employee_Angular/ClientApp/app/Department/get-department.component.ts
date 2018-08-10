@@ -11,26 +11,25 @@ import {
     Router,
     ActivatedRoute
 } from '@angular/router';
-
-import { EmployeeService } from "../../services/empservice.service";
+import { DepartmentService } from './department.service';
 
 @Component({
-    selector: 'getdepartment',
-    templateUrl: './getdepartment.component.html'
+    selector: 'get-department',
+    templateUrl: './get-department.component.html'
 })
-export class departmentData {
+export class GetDepartmentComponent {
     public departmentList: iDepartmentList[];
 
-    constructor(public http: Http, private _router: Router, private _employeeService: EmployeeService) {
+    constructor(public http: Http, private _router: Router, private _departmentService: DepartmentService) {
         this.getDepartment();
     }
     getDepartment() {
-        this._employeeService.getDepartment().subscribe(data => this.departmentList = data)
+        this._departmentService.getDepartment().subscribe(data => this.departmentList = data)
     }
     deleteDepartment(id) {
         var ans = confirm("Do you want to delete Department with Id: " + id);
         if (ans) {
-            this._employeeService.deleteDepartment(id).subscribe((data) => {
+            this._departmentService.deleteDepartment(id).subscribe((data) => {
                 this.getDepartment();
             }, error => console.error(error))
         }

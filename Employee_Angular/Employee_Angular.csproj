@@ -25,12 +25,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="ClientApp\app\components\addDepartment\addDepartment.component.ts" />
-    <None Remove="ClientApp\app\components\AddEmployee\AddEmployee.component.ts" />
-    <None Remove="ClientApp\app\components\getDepartment\getDepartment.component.ts" />
-    <None Remove="ClientApp\app\components\GetEmployee\GetEmployee.component.ts" />
-    <None Remove="ClientApp\app\Services\employeeservices.ts" />
-    <None Remove="ClientApp\app\Services\empService.service.ts" />
+    <None Remove="ClientApp\app\app-routing.module.ts" />
+    <None Remove="ClientApp\app\Department\department.service.ts" />
+    <None Remove="ClientApp\app\Employee\employee.service.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -12054,11 +12051,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\app\components\addDepartment\addDepartment.component.ts" />
-    <TypeScriptCompile Include="ClientApp\app\components\AddEmployee\AddEmployee.component.ts" />
-    <TypeScriptCompile Include="ClientApp\app\components\getDepartment\getDepartment.component.ts" />
-    <TypeScriptCompile Include="ClientApp\app\components\GetEmployee\GetEmployee.component.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Services\empService.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\app-routing.module.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Department\department.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Employee\employee.service.ts" />
     <TypeScriptCompile Include="node_modules\%40angular\animations\animations.d.ts" />
     <TypeScriptCompile Include="node_modules\%40angular\animations\browser.d.ts" />
     <TypeScriptCompile Include="node_modules\%40angular\animations\browser\index.d.ts" />

@@ -1,20 +1,19 @@
 ﻿import { Component, OnInit } from "@angular/core";
 import { FormGroup, Form, FormBuilder, Validators } from "@angular/forms";
 import { Router, ActivatedRoute } from '@angular/router';
-import { departmentData } from '../getdepartment/getdepartment.component';
-import { EmployeeService } from "../../services/empservice.service";
+import { DepartmentService } from "./department.service";
 
 @Component({
-    selector: 'adddepartment',
-    templateUrl: './adddepartment.component.html'
+    selector: 'add-department',
+    templateUrl: './add-department.component.html'
 })
-export class AddDepartment implements OnInit {
+export class AddDepartmentComponent implements OnInit {
     departmentForm: FormGroup;
     title: string = "Create";
     id: number = 0;
     errorMessage: any;
 
-    constructor(private _fb: FormBuilder, private _avRoute: ActivatedRoute, private _employeeService: EmployeeService, private _router: Router) {
+    constructor(private _fb: FormBuilder, private _avRoute: ActivatedRoute, private _departmentService: DepartmentService, private _router: Router) {
         if (this._avRoute.snapshot.params["id"]) {
             this.id = this._avRoute.snapshot.params["id"];
         }
@@ -26,7 +25,7 @@ export class AddDepartment implements OnInit {
     ngOnInit() {
         if (this.id > 0) {
             this.title = "Edit";
-            this._employeeService.getDepartmentById(this.id).subscribe(resp => this.departmentForm.setValue(resp),
+            this._departmentService.getDepartmentById(this.id).subscribe(resp => this.departmentForm.setValue(resp),
                 error => this.errorMessage = error);
         }
     }
@@ -35,13 +34,13 @@ export class AddDepartment implements OnInit {
             return;
 
         if (this.title == "Create") {
-            this._employeeService.saveDepartment(this.departmentForm.value)
+            this._departmentService.saveDepartment(this.departmentForm.value)
                 .subscribe((data) => {
                     this._router.navigate(['/get-department']);
                 }, error => this.errorMessage = error)
         }
         if (this.title == "Edit") {
-            this._employeeService.updateDepartment(this.departmentForm.value)
+            this._departmentService.updateDepartment(this.departmentForm.value)
                 .subscribe((data) => {
                     this._router.navigate(['/get-department']);
                 }, error => this.errorMessage = error)

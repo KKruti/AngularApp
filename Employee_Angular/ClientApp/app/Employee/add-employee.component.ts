@@ -2,13 +2,14 @@
 import { Http, Headers } from '@angular/http';
 import { FormGroup, Form, FormBuilder, Validators } from "@angular/forms";
 import { Router, ActivatedRoute } from '@angular/router';
-import { EmployeeDataComponent } from '../getemployee/getemployee.component';
-import { EmployeeService } from '../../services/empservice.service';
+import { EmployeeService } from './employee.service';
+import { DepartmentService } from '../Department/department.service';
+
 @Component({
-    selector: 'addemployee',
-    templateUrl: './addemployee.component.html'
+    selector: 'add-employee',
+    templateUrl: './add-employee.component.html'
 })
-export class createemployee implements OnInit {
+export class AddEmployeeComponent implements OnInit {
     employeeForm: FormGroup;
     title: string = "Create";
     id: number = 0;
@@ -16,7 +17,7 @@ export class createemployee implements OnInit {
     public deparments: DepartmentList[];
 
     constructor(private _fb: FormBuilder, private _avRoute: ActivatedRoute,
-        private _employeeService: EmployeeService, private _router: Router) {
+        private _employeeService: EmployeeService, private _departmentService: DepartmentService, private _router: Router) {
 
         if (this._avRoute.snapshot.params["id"]) {
             this.id = this._avRoute.snapshot.params["id"];
@@ -43,7 +44,7 @@ export class createemployee implements OnInit {
         }
     }
     getDepartment() {
-        this._employeeService.getDepartment().subscribe(data => this.deparments = data)
+        this._departmentService.getDepartment().subscribe(data => this.deparments = data)
         console.log(this.deparments);
     }
     save() {
