@@ -17,15 +17,9 @@ export const appRoutes: Routes = [
     { path: 'add-employee', component: AddEmployeeComponent },
     { path: 'employee/edit/:id', component: AddEmployeeComponent },
     { path: 'department/edit/:id', component: AddDepartmentComponent },
-    {
-        path: 'get-employee', component: GetEmployeeComponent
-    },
-    {
-        path: 'get-department', component: GetDepartmentComponent
-    },
-    {
-        path: 'add-department', component: AddDepartmentComponent
-    },
+    { path: 'get-employee', component: GetEmployeeComponent },
+    { path: 'get-department', component: GetDepartmentComponent },
+    { path: 'add-department', component: AddDepartmentComponent },
     { path: '**', redirectTo: 'home' },
 ];
 

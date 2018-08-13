@@ -4,19 +4,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
-import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
-
 import { appRoutes } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddEmployeeComponent } from './Employee/add-employee.component';
-import { GetDepartmentComponent } from './Department/get-department.component';
-import { AddDepartmentComponent } from './Department/add-department.component';
-import { GetEmployeeComponent } from './Employee/get-employee.component';
-import { EmployeeService } from './Employee/employee.service';
-import { DepartmentService } from './Department/department.service';
+import { NavMenuComponent } from './components/navmenu/navmenu.component';
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
+import { DepartmentModule } from './Department/department.module';
+import { EmployeeModule } from './Employee/employee.module';
 
 @NgModule({
     imports: [
@@ -24,6 +21,10 @@ import { DepartmentService } from './Department/department.service';
         HttpModule,
         FormsModule,
         ReactiveFormsModule,
+        CoreModule,
+        SharedModule,
+        DepartmentModule,
+        EmployeeModule,
         RouterModule.forRoot(appRoutes)
     ],
     declarations: [
@@ -32,12 +33,7 @@ import { DepartmentService } from './Department/department.service';
         CounterComponent,
         FetchDataComponent,
         HomeComponent,
-        GetEmployeeComponent,
-        AddEmployeeComponent,
-        GetDepartmentComponent,
-        AddDepartmentComponent
     ],
-    providers: [EmployeeService, DepartmentService]
 })
 export class AppModuleShared {
 }

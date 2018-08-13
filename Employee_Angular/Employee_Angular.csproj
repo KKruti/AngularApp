@@ -26,8 +26,12 @@
 
   <ItemGroup>
     <None Remove="ClientApp\app\app-routing.module.ts" />
+    <None Remove="ClientApp\app\Department\department-route.module.ts" />
+    <None Remove="ClientApp\app\Department\department.module.ts" />
     <None Remove="ClientApp\app\Department\department.service.ts" />
+    <None Remove="ClientApp\app\Employee\employee.module.ts" />
     <None Remove="ClientApp\app\Employee\employee.service.ts" />
+    <None Remove="ClientApp\app\shared\shared.module.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -12052,8 +12056,12 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\app\app-routing.module.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Department\department-route.module.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Department\department.module.ts" />
     <TypeScriptCompile Include="ClientApp\app\Department\department.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Employee\employee.module.ts" />
     <TypeScriptCompile Include="ClientApp\app\Employee\employee.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shared\shared.module.ts" />
     <TypeScriptCompile Include="node_modules\%40angular\animations\animations.d.ts" />
     <TypeScriptCompile Include="node_modules\%40angular\animations\browser.d.ts" />
     <TypeScriptCompile Include="node_modules\%40angular\animations\browser\index.d.ts" />
